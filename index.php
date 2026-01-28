@@ -27,71 +27,9 @@
     />
   </head>
   <body>
-    <header class="header">
-      <a href="#" class="logo"><i class="fas fa-shopping-basket"></i>Groco</a>
-
-   <nav class="navbar">
-    <a href="index.php#home">home</a>
-    <a href="index.php#features">features</a>
-    <a href="/shop_category.php">products</a>
-    <a href="categories.php">categories</a> 
-    <a href="index.php#review">review</a>
-    <a href="index.php#blogs">blogs</a>
-  </nav>
-
-      <div class="icons">
-        <div id="menu-btn" class="fas fa-bars"></div>
-        <div id="search-btn" class="fas fa-search"></div>
-        <div id="cart-btn" class="fas fa-shopping-cart"></div>
-        <div id="login-btn" class="fas fa-user"></div>
-      </div>
-
-      <form action="#" class="search-form">
-        <input type="search" id="search-bar" placeholder="Search Here..." />
-        <label for="search-bar" class="fas fa-search"></label>
-      </form>
-      <div class="shopping-cart">
-        <div class="box">
-          <img src="banana.jpg" alt="#" />
-          <div class="box-content">
-            <h3>banana</h3>
-            <span class="price">$2.99/-</span>
-            <span class="quantity">qty : 1</span>
-          </div>
-          <i class="fa-solid fa-trash"></i>
-        </div>
-        <div class="box">
-          <img src="onion.jpg" alt="#" />
-
-          <div class="box-content">
-            <h3>Onion</h3>
-            <span class="price">$1.99/-</span>
-            <span class="quantity">qty : 1</span>
-          </div>
-          <i class="fa-solid fa-trash"></i>
-        </div>
-        <div class="box">
-          <img src="tomato.jpg" alt="#" />
-          <div class="box-content">
-            <h3>Tomata</h3>
-            <span class="price">$2.99/-</span>
-            <span class="quantity">qty : 1</span>
-          </div>
-          <i class="fa-solid fa-trash"></i>
-        </div>
-        <div class="total">total : $7.97/-</div>
-        <a href="#" class="btn">checkout</a>
-      </div>
-
-      <form action="#" class="login-form">
-        <h3>Login Now</h3>
-        <input type="email" placeholder="Enter Your Email" class="box" />
-        <input type="password" placeholder="Enter Your Passowrd" class="box" />
-        <p>Forget you password <a href="#">Click Here</a></p>
-        <p>Don't Have An Account <a href="#">Create Now</a></p>
-        <input type="submit" value="login now" class="btn" />
-      </form>
-    </header>
+    <?php
+    include "header.php"
+    ?>
 
     <section class="home" id="home">
       <div class="content">
@@ -145,7 +83,7 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star-half-alt"></i>
             </div>
-            <a href="#" class="btn">Add to Cart</a>
+           <a href="product_details.php?id=1" class="btn">View Details</a>
           </div>
 
           <div class="swiper-slide box">
@@ -159,7 +97,7 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star-half-alt"></i>
             </div>
-            <a href="#" class="btn">Add to Cart</a>
+           <a href="product_details.php?id=1" class="btn">View Details</a>
           </div>
 
           <div class="swiper-slide box">
@@ -173,7 +111,7 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star-half-alt"></i>
             </div>
-            <a href="#" class="btn">Add to Cart</a>
+           <a href="product_details.php?id=1" class="btn">View Details</a>
           </div>
           <div class="swiper-slide box">
             <img src="cabbage_gobi.jpg" alt="#" />
@@ -186,7 +124,7 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star-half-alt"></i>
             </div>
-            <a href="#" class="btn">Add to Cart</a>
+            <a href="product_details.php?id=1" class="btn">View Details</a>
           </div>
         </div>
       </div>
@@ -204,7 +142,7 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star-half-alt"></i>
             </div>
-            <a href="#" class="btn">Add to Cart</a>
+        <a href="product_details.php?id=1" class="btn">View Details</a>
           </div>
 
           <div class="swiper-slide box">
@@ -218,7 +156,7 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star-half-alt"></i>
             </div>
-            <a href="#" class="btn">Add to Cart</a>
+         <a href="product_details.php?id=1" class="btn">View Details</a>
           </div>
 
           <div class="swiper-slide box">
@@ -232,7 +170,7 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star-half-alt"></i>
             </div>
-            <a href="#" class="btn">Add to Cart</a>
+           <a href="product_details.php?id=1" class="btn">View Details</a>
           </div>
           <div class="swiper-slide box">
             <img src="green-lemon.jpg" alt="#" />
@@ -245,7 +183,7 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star-half-alt"></i>
             </div>
-            <a href="#" class="btn">Add to Cart</a>
+            <a href="product_details.php?id=1" class="btn">View Details</a>
           </div>
         </div>
       </div>
@@ -407,47 +345,10 @@
         </div>
       </div>
     </section>
+<?php
+include "footer.php"
 
-    <section class="footer">
-    <div class="box-container">
-        <div class="box">
-            <h3> Groco <i class="fas fa-shopping-basket"></i> </h3>
-            <p>Fresh and organic products delivered straight to your door. Quality you can taste.</p>
-            <div class="share">
-                <a href="#" class="fab fa-facebook-f"></a>
-                <a href="#" class="fab fa-twitter"></a>
-                <a href="#" class="fab fa-instagram"></a>
-                <a href="#" class="fab fa-linkedin"></a>
-            </div>
-        </div>
-
-        <div class="box">
-            <h3>contact info</h3>
-            <a href="#" class="links"> <i class="fas fa-phone"></i> +123-456-7890 </a>
-            <a href="#" class="links"> <i class="fas fa-envelope"></i> info@groco.com </a>
-            <a href="#" class="links"> <i class="fas fa-map-marker-alt"></i> Islamabad, Pakistan </a>
-        </div>
-
-        <div class="box">
-            <h3>quick links</h3>
-            <a href="#home" class="links"> <i class="fas fa-arrow-right"></i> home </a>
-            <a href="#features" class="links"> <i class="fas fa-arrow-right"></i> features </a>
-            <a href="#products" class="links"> <i class="fas fa-arrow-right"></i> products </a>
-            <a href="#categories" class="links"> <i class="fas fa-arrow-right"></i> categories </a>
-            <a href="#reviews" class="links"> <i class="fas fa-arrow-right"></i> reviews </a>
-            <a href="#blogs" class="links"> <i class="fas fa-arrow-right"></i> blogs </a>
-        </div>
-
-        <div class="box">
-            <h3>newsletter</h3>
-            <p>subscribe for latest updates</p>
-            <input type="email" placeholder="your email" class="email">
-            <input type="submit" value="subscribe" class="btn">
-        </div>
-    </div>
-
-    <div class="credit"> created by <span> Shahzaib Riaz </span> | all rights reserved </div>
-</section>
+?>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="script.js"></script>

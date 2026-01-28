@@ -1,8 +1,18 @@
 <?php 
 include 'db_config.php'; 
 
-// Fetch ALL products from the table
-$query = "SELECT * FROM products";
+// Get category from URL
+$cat_slug = isset($_GET['cat']) ? mysqli_real_escape_string($conn, $_GET['cat']) : '';
+
+// If cat_slug is empty, select everything. Otherwise, filter.
+if($cat_slug == '') {
+    $query = "SELECT * FROM products";
+    $title = "All Products";
+} else {
+    $query = "SELECT * FROM products WHERE category = '$cat_slug'";
+    $title = ucfirst($cat_slug);
+}
+
 $result = mysqli_query($conn, $query);
 ?>
 
@@ -10,26 +20,19 @@ $result = mysqli_query($conn, $query);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Groco - All Products</title>
+    <title>Groco - <?php echo $title; ?></title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
 </head>
 <body>
 
-<header class="header">
-    <a href="index.php" class="logo"><i class="fas fa-shopping-basket"></i>Groco</a>
-    <nav class="navbar">
-        <a href="index.php">home</a>
-        <a href="categories.php">categories</a>
-        <a href="all_products.php" style="color:var(--orange)">products</a>
-    </nav>
-</header>
+ <?php
+    include "header.php"
+    ?>
 
 <section class="products" style="margin-top: 12rem;">
-    <h1 class="heading"> All <span>Products</span> </h1>
-
+    <h1 class="heading"> Our <span><?php echo $title; ?></span> </h1>
     <div class="box-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr)); gap:1.5rem;">
-        
         <?php
         if(mysqli_num_rows($result) > 0) {
             while($row = mysqli_fetch_assoc($result)) {
@@ -38,17 +41,21 @@ $result = mysqli_query($conn, $query);
                     <img src="images/<?php echo $row['image']; ?>" alt="" style="height: 20rem; width: 100%; object-fit: contain;">
                     <h3 style="font-size: 2.2rem; color:var(--black); padding: 1rem 0;"><?php echo $row['name']; ?></h3>
                     <div class="price" style="font-size: 2rem; color:var(--light-color);">$<?php echo $row['price']; ?>/-</div>
-                    <a href="#" class="btn">add to cart</a>
+                    <a href="product_details.php?id=<?php echo $row['id']; ?>" class="btn">view details</a>
                 </div>
                 <?php
             }
         } else {
-            echo "<p style='font-size:2rem; text-align:center; width:100%;'>No products found in database.</p>";
+            echo "<p style='font-size:2rem; text-align:center; width:100%;'>No items found.</p>";
         }
         ?>
-
     </div>
 </section>
+
+<?php
+include "footer.php"
+
+?>
 
 <script src="script.js"></script>
 </body>
