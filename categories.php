@@ -27,7 +27,7 @@ $result = mysqli_query($conn, $query);
             <?php
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
-                    // Check if image exists in DB, otherwise use placeholder
+
                     $image_name = !empty($row['images']) ? $row['images'] : 'category_default.png';
                     ?>
                     <div class="box">
